@@ -8,6 +8,8 @@ import java.lang.reflect.Modifier;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 public class DeveloperTest {
 
     @Test
@@ -31,5 +33,22 @@ public class DeveloperTest {
     @Test
     public void getGithubID_returns_correct_githubId() {
         assertEquals("ilandry-ucsb", Developer.getGithubId());
+    }
+
+    @Test
+    public void getTeam_returns_team_with_correct_name() {
+        Team t = Developer.getTeam();
+        assertEquals("s25-03", t.getName());
+    }
+
+    @Test
+    public void getTeam_returns_team_with_correct_members() {
+        Team t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Daisy Z."), "Team should contain Daisy Z.");
+        assertTrue(t.getMembers().contains("Isaac L."), "Team should contain Daisy Z.");
+        assertTrue(t.getMembers().contains("Kade W."), "Team should contain Daisy Z.");
+        assertTrue(t.getMembers().contains("Karena L."), "Team should contain Daisy Z.");
+        assertTrue(t.getMembers().contains("Saahas B."), "Team should contain Daisy Z.");
+        assertTrue(t.getMembers().contains("Xin Ping X. W."), "Team should contain Daisy Z.");
     }
 }
