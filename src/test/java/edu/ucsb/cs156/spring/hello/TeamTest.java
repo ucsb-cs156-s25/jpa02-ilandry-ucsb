@@ -37,8 +37,15 @@ public class TeamTest {
 
         Team test_team_2 = new Team("test-team");
         assertEquals(team.equals(test_team_2), true);
-        
+
         test_team_2.addMember("0");
         assertEquals(team.equals(test_team_2), false);
+    }
+
+    @Test
+    public void hashCode_returns_correct_hash() {
+        int result = team.hashCode();
+        int expectedResult = -1226298695;
+        assertEquals(expectedResult, result);
     }
 }
