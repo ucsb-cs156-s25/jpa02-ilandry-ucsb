@@ -19,10 +19,6 @@ public class TeamTest {
        assert(team.getName().equals("test-team"));
     }
 
-   
-    // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
-    // 100% mutation coverage (all mutants timed out or killed)
-
     @Test
     public void toString_returns_correct_string() {
         assertEquals("Team(name=test-team, members=[])", team.toString());
@@ -30,23 +26,30 @@ public class TeamTest {
 
     @Test
     public void  equals_is_correct() {
-
+        // Self-equality
         assertEquals(team.equals(team), true);
+
+        // Object is not a Team
         String test_team_name = "s";
         assertEquals(team.equals(test_team_name), false);        
 
+        // Same name.
         Team test_team_2 = new Team("test-team");
         assertEquals(team.equals(test_team_2), true);
 
+        // Same name, different members
         test_team_2.addMember("0");
         assertEquals(team.equals(test_team_2), false);
 
+        // Same name, same members
         team.addMember("0");
         assertEquals(team.equals(test_team_2), true);
 
+        // Different name, same members
         test_team_2.setName("H");
         assertEquals(team.equals(test_team_2), false);
 
+        // Different name, different members
         test_team_2.addMember("1");
         assertEquals(team.equals(test_team_2), false);
     }
