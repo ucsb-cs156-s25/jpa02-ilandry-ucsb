@@ -41,7 +41,7 @@ public class Developer {
         team.addMember("Kade W.");
         team.addMember("Karena L.");
         team.addMember("Saahas B.");
-        team.addMember("Xin Ping X. W.");
+        team.addMember("Xin W.");
         return team;
     }
 }
