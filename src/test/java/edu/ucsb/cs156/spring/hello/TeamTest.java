@@ -40,6 +40,15 @@ public class TeamTest {
 
         test_team_2.addMember("0");
         assertEquals(team.equals(test_team_2), false);
+
+        team.addMember("0");
+        assertEquals(team.equals(test_team_2), true);
+
+        test_team_2.setName("H");
+        assertEquals(team.equals(test_team_2), false);
+
+        test_team_2.addMember("1");
+        assertEquals(team.equals(test_team_2), false);
     }
 
     @Test
